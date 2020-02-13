@@ -1,0 +1,26 @@
+{
+  "name": "ntask-web",
+  "version": "1.0.0",
+  "description": "Versão web do gerenciador de tarefas",
+  "scripts": {
+    "start": "npm run build && npm run server",
+    "server": "http-server public -p 3001",
+    "build": "npm run browserify && npm run uglify",
+    "browserify": "browserify src -t babelify -o public/js/app.js",
+    "uglify": "uglify -s public/js/app.js -o public/js/app.min.js"
+  },
+  "author": "Guilherme",
+  "dependencies": {
+    "babelify": "^6.3.0",
+    "browser-request": "^0.3.3",
+    "browserify": "^11.2.0",
+    "http-server": "^0.12.1",
+    "tiny-emitter": "^2.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  }
+}
